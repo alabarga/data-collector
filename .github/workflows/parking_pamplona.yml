@@ -12,6 +12,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Modify openssl.cnf
+        run: |
+          echo "Options = UnsafeLegacyRenegotiation" | sudo tee -a /etc/ssl/openssl.cnf
+
       - name: Create Data Directory
         run: mkdir -p data/parkings/$(date +'%Y-%m')
         
