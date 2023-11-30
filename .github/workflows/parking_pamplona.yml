@@ -16,6 +16,12 @@ jobs:
         run: |
           echo "Options = UnsafeLegacyRenegotiation" | sudo tee -a /etc/ssl/openssl.cnf
 
+      - name: openssl version
+        run: openssl version
+
+      - name: View openssl.cnf
+        run: tail /etc/ssl/openssl.cnf
+        
       - name: Create Data Directory
         run: mkdir -p data/parkings/$(date +'%Y-%m')
         
