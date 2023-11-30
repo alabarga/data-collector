@@ -17,3 +17,14 @@ jobs:
         
       - name: Fetch XML
         run: wget -O data/parkings/$(date +'%Y-%m')/parkings_$(date +'%Y-%m-%d-%H-%M').xml https://parkings.pamplona.es/parkings.xml
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "alberto.labarga@gmail.com"
+          git config --global user.name "Alberto Labarga"
+
+      - name: Commit and Push
+        run: |
+          git add data/parkings/$(date +'%Y-%m')/parkings_$(date +'%Y-%m-%d-%H-%M').xml
+          git commit -m "Add JSON file for $(date +'%Y-%m-%d %H:%M')"
+          git push        
