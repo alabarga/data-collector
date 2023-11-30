@@ -12,5 +12,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Create Data Directory
+        run: mkdir -p data/parkings/$(date +'%Y-%m')
+        
       - name: Fetch XML
         run: wget -O data/parkings/$(date +'%Y-%m')/parkings_$(date +'%Y-%m-%d-%H-%M').xml https://parkings.pamplona.es/parkings.xml
