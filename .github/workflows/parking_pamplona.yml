@@ -13,5 +13,5 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Fetch XML
-        run: wget -O data/$(date +'%Y-%m')/parkings_$(date +'%Y-%m-%d-%H-%M').xml https://parkings.pamplona.es/parkings.xml
+        run: wget -O data/parkings/$(date +'%Y-%m')/parkings_$(date +'%Y-%m-%d-%H-%M').xml https://parkings.pamplona.es/parkings.xml
 
