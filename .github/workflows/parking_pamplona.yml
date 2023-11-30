@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Fetch XML
         run: wget -O data/parkings/$(date +'%Y-%m')/parkings_$(date +'%Y-%m-%d-%H-%M').xml https://parkings.pamplona.es/parkings.xml
