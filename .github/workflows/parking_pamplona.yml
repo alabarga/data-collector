@@ -26,7 +26,7 @@ jobs:
         run: mkdir -p data/parkings/$(date +'%Y-%m')
         
       - name: Fetch XML
-        run: wget -O data/parkings/$(date +'%Y-%m')/parkings_$(date +'%Y-%m-%d-%H-%M').xml https://parkings.pamplona.es/parkings.xml
+        run: wget -O data/parkings/$(date +'%Y-%m')/parkings_$(date +'%Y-%m-%d-%H-%M').xml http://parkings.pamplona.es/parkings.xml
 
       - name: Configure Git
         run: |
